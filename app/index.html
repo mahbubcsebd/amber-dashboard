@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Amber | Dashboard</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <!-- Remix Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" />
+    <!-- Slick Slider -->
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+    <!-- Data Tables -->
+    <link rel="stylesheet" href="assets/css/data-table.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+    <div id="header" class="header section">
+        <div class="header-area">
+            <div class="">
+                <div class="header-content-wrapper">
+                    <div class="header-logo-wrapper">
+                        <a id="website-logo" href="index.html" class="website-logo">
+                            <img src="assets/images/icons/logo.svg" alt="logo">
+                        </a>
+                        <div class="slide-toggle-box">
+                            <button id="sidebar-toggle-btn" class="sidebar-toggle-btn d-none d-md-flex"><i
+                                    class="fa-solid fa-angles-left"></i></button>
+                            <button id="sidebar-show-btn" class="sidebar-toggle-btn d-md-none"><i
+                                    class="ri-menu-3-fill"></i></i></button>
+                        </div>
+                    </div>
+                    <div class="header-menu">
+                        <div class="header-menu-item">
+                            <h3 class="dashboard-header-title">Dashboard</h3>
+                        </div>
+                        <div class="header-search-box">
+                            <input id="header-search" class="header-search form-control" type="text"
+                                placeholder="Search">
+                            <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <button class="search-modal-btn">⌘K</button>
+                        </div>
+                        <div class="header-menu-list">
+                            <a href="#" class="upgrade-btn"><span><img src="assets/images/icons/upgrade.svg"
+                                        alt="upgrade"></span>Upgrade</a>
+                            <div class="dropdown header-dropdown header-setting-dropdown">
+                                <button class="header-btn btn-setting" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i data-feather="settings"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown header-dropdown header-notification-dropdown">
+                                <button class="header-btn btn-notification" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i data-feather="bell"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown header-dropdown profile-dropdown">
+                                <button class="header-profile" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <span><img src="assets/images/images/avatar.png" alt="avatar"></span> Admin <span><i
+                                            class="ri-arrow-down-s-line"></i></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-page">
+        <!-- Dashboard Sidebar Start -->
+        <div class="dashboard-sidebar">
+            <ul class="sidebar-menu-list">
+                <li class="sidebar-menu-item active">
+                    <a href="index.html" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/dashboard.svg" alt="dashboard"></span>
+                            Dashboard
+                        </span>
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="products-btn" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/products.svg" alt="products"></span>
+                            Products
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="products-link-list" class="sidebar-link-list">
+                        <li><a class="sidebar-link active" href="#">All Product</a></li>
+                        <li><a class="sidebar-link" href="#">Add Product</a></li>
+                        <li><a class="sidebar-link" href="#">All Product Types</a></li>
+                        <li><a class="sidebar-link" href="#">Add Product Types</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="engagements-btn" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/engagements.svg"
+                                    alt="engagements"></span>
+                            Engagements
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="engagements-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="findings-btn" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/findings.svg" alt="findings"></span>
+                            Findings
+                        </span>
+
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="findings-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="components-btn" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/components.svg"
+                                    alt="components"></span>
+                            Components
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="components-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="endpoints-btn" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/endpoints.svg" alt="endpoints"></span>
+                            Endpoints
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="endpoints-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="reports-btn" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/reports.svg" alt="reports"></span>
+                            Reports
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="reports-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="metrics-btn" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/metrics.svg" alt="metrics"></span>
+                            Metrics
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="metrics-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="user-btn" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/products.svg" alt="user"></span>
+                            User
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="user-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="calendar-btn" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/calendar.svg" alt="calendar"></span>
+                            Calendar
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="calendar-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="questionaries" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/questionaures.svg"
+                                    alt="questionaries"></span>
+                            Questionaries
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="questionaries-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="configaration" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap"><span><img class="menu-icon"
+                                    src="assets/images/icons/configuration.svg" alt="configaration"></span>
+                            Configaration
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="configaration-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- Dashboard Sidebar End -->
+
+
+
+        <!-- Dashboard Page Content Start -->
+        <div class="dashboard-page-content">
+            <!-- Finding Section Start -->
+            <div class="finding-details-wrapper">
+                <div class="single-finding-details">
+                    <div class="finding-content">
+                        <div class="finding-top">
+                            <div class="finding-details-image">
+                                <img src="assets/images/icons/finding-engagement.svg" alt="finding">
+                            </div>
+                            <div class="finding-text">
+                                <h3 class="finding-name">SQL Injection</h3>
+                                <p class="finding-number">11</p>
+                            </div>
+                        </div>
+                        <p class="finding-statistic fs-warning">
+                            <span>-10% <i class="ri-arrow-right-down-line"></i></span>
+                            Last Seven Days
+                        </p>
+                    </div>
+                    <div class="">
+                        <a href="#" class="finding-btn"><span>View Engagement Details</span><i
+                                class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+                <div class="single-finding-details">
+                    <div class="finding-content">
+                        <div class="finding-top">
+                            <div class="finding-details-image">
+                                <img src="assets/images/icons/finding-bug.svg" alt="bug">
+                            </div>
+                            <div class="finding-text">
+                                <h3 class="finding-name">Last Seven Days</h3>
+                                <p class="finding-number">1076</p>
+                            </div>
+                        </div>
+                        <p class="finding-statistic fs-success">
+                            <span>+10% <i class="ri-arrow-right-up-line"></i></span>
+                            Last Seven Days
+                        </p>
+                    </div>
+                    <div class="">
+                        <a href="#" class="finding-btn"><span>View Finding Details</span><i
+                                class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+                <div class="single-finding-details">
+                    <div class="finding-content">
+                        <div class="finding-top">
+                            <div class="finding-details-image">
+                                <img src="assets/images/icons/finding-bug.svg" alt="finding">
+                            </div>
+                            <div class="finding-text">
+                                <h3 class="finding-name">Closed In</h3>
+                                <p class="finding-number">11</p>
+                            </div>
+                        </div>
+                        <p class="finding-statistic fs-warning">
+                            <span>-10% <i class="ri-arrow-right-down-line"></i></span>
+                            Last Seven Days
+                        </p>
+                    </div>
+                    <div class="">
+                        <a href="#" class="finding-btn"><span>View Engagement Details</span><i
+                                class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+                <div class="single-finding-details">
+                    <div class="finding-content">
+                        <div class="finding-top">
+                            <div class="finding-details-image">
+                                <img src="assets/images/icons/finding-bug.svg" alt="finding">
+                            </div>
+                            <div class="finding-text">
+                                <h3 class="finding-name">SQL Injection</h3>
+                                <p class="finding-number">11</p>
+                            </div>
+                        </div>
+                        <p class="finding-statistic fs-success">
+                            <span>+02% <i class="ri-arrow-right-down-line"></i></span>
+                            Last Seven Days
+                        </p>
+                    </div>
+                    <div class="">
+                        <a href="#" class="finding-btn"><span>View Engagement Details</span><i
+                                class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Finding Section End -->
+
+
+
+            <!-- Statistics Section Start -->
+            <div id="statistics" class="statistics">
+                <div class="statistics-area">
+                    <div class="row">
+                        <div class="col-md-8 mb-4 mb-lg-0">
+                            <div class="single-dashboard-card mb-4">
+                                <div class="single-dashboard-card-header mb-4">
+                                    <h3 class="single-dashboard-title">Reported Finding Severity</h3>
+                                    <div class="select-wrapper">
+                                        <span class="icon-wrapper">
+                                            <i class="ri-calendar-2-line"></i>
+                                        </span>
+                                        <select class="form-select severity-select" id="timePeriodSelector">
+                                            <option selected value="month">By Month</option>
+                                            <option value="week">By Week</option>
+                                            <option value="day">By Day</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="single-dashboard-card-content">
+                                    <div class="chart-container" style="position: relative; height: 600px;">
+                                        <canvas id="severityLineChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-dashboard-card">
+                                <div class="single-dashboard-card-header mb-4">
+                                    <h3 class="single-dashboard-title">Historical Finding Severity</h3>
+                                    <!-- Three-dot menu -->
+                                    <div class="dropdown menu-container">
+                                        <button class="three-dot-btn" type="button" id="threeDotMenu"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="ri-more-fill"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="threeDotMenu">
+                                            <li><a class="dropdown-item" href="#" id="filterData">Filter Data</a></li>
+                                            <li><a class="dropdown-item" href="#" id="exportData">Export Data</a></li>
+                                            <li><a class="dropdown-item" href="#" id="customizeChart">Customize
+                                                    Chart</a></li>
+                                            <li><a class="dropdown-item" href="#" id="resetChart">Reset Chart</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="single-dashboard-card-content">
+                                    <div class="chart-container">
+                                        <div class="chart-wrapper">
+                                            <canvas id="severityDonutChart"></canvas>
+                                        </div>
+                                        <div id="customLegend" class="custom-legend"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="single-dashboard-card mb-4">
+                                <div class="single-dashboard-card-header mb-4">
+                                    <h3 class="single-dashboard-title">Assigned Engagement</h3>
+                                </div>
+                                <div class="hr-line mt-2 mb-4"></div>
+                                <div class="single-dashboard-card-content">
+                                    <div id="calendar" style="width: 100%;"></div>
+                                </div>
+                                <div class="hr-line my-4"></div>
+                                <div class="single-dashboard-card-header mb-4">
+                                    <h3 class="single-dashboard-title">04 Sep 2024</h3>
+                                    <button type="button" class="engagement-btn"><i class="ri-add-line"></i><span>Add
+                                            Engagement</span></button>
+                                </div>
+                                <div class="profile-badges-wrapper">
+                                    <div class="single-badge">
+                                        <div class="badge-text">
+                                            <h4 class="bagde-name">UI/UX Daily Meet</h4>
+                                            <p class="bagde-time"><i class="ri-time-line"></i> 10:00-11:00</p>
+                                        </div>
+                                        <div class="badge-img-wrapper">
+                                            <div class="single-badge-img" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="John Doe">
+                                                <img src="assets/images/images/badge-1.png">
+                                            </div>
+                                            <div class="single-badge-img" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="Jane Smith">
+                                                <img src="assets/images/images/badge-2.png">
+                                            </div>
+                                            <div class="single-badge-img" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="Mike Johnson">
+                                                <img src="assets/images/images/badge-3.png">
+                                            </div>
+                                            <div class="single-badge-img badge-more">
+                                                <p>+6</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="single-badge">
+                                        <div class="badge-text">
+                                            <h4 class="bagde-name">UI/UX Daily Meet</h4>
+                                            <p class="bagde-time"><i class="ri-time-line"></i> 10:00-11:00</p>
+                                        </div>
+                                        <div class="badge-img-wrapper">
+                                            <div class="single-badge-img" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="John Doe">
+                                                <img src="assets/images/images/badge-1.png">
+                                            </div>
+                                            <div class="single-badge-img" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="Jane Smith">
+                                                <img src="assets/images/images/badge-2.png">
+                                            </div>
+                                            <div class="single-badge-img" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="Mike Johnson">
+                                                <img src="assets/images/images/badge-3.png">
+                                            </div>
+                                            <div class="single-badge-img badge-more">
+                                                <p>+6</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="single-badge">
+                                        <div class="badge-text">
+                                            <h4 class="bagde-name">UI/UX Daily Meet</h4>
+                                            <p class="bagde-time"><i class="ri-time-line"></i> 10:00-11:00</p>
+                                        </div>
+                                        <div class="badge-img-wrapper">
+                                            <div class="single-badge-img" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="John Doe">
+                                                <img src="assets/images/images/badge-1.png">
+                                            </div>
+                                            <div class="single-badge-img" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="Jane Smith">
+                                                <img src="assets/images/images/badge-2.png">
+                                            </div>
+                                            <div class="single-badge-img" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="Mike Johnson">
+                                                <img src="assets/images/images/badge-3.png">
+                                            </div>
+                                            <div class="single-badge-img badge-more">
+                                                <p>+6</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="single-badge">
+                                        <div class="badge-text">
+                                            <h4 class="bagde-name">UI/UX Daily Meet</h4>
+                                            <p class="bagde-time"><i class="ri-time-line"></i> 10:00-11:00</p>
+                                        </div>
+                                        <div class="badge-img-wrapper">
+                                            <div class="single-badge-img" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="John Doe">
+                                                <img src="assets/images/images/badge-1.png">
+                                            </div>
+                                            <div class="single-badge-img" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="Jane Smith">
+                                                <img src="assets/images/images/badge-2.png">
+                                            </div>
+                                            <div class="single-badge-img" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="Mike Johnson">
+                                                <img src="assets/images/images/badge-3.png">
+                                            </div>
+                                            <div class="single-badge-img badge-more">
+                                                <p>+6</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="single-badge">
+                                        <div class="badge-text">
+                                            <h4 class="bagde-name">UI/UX Daily Meet</h4>
+                                            <p class="bagde-time"><i class="ri-time-line"></i> 10:00-11:00</p>
+                                        </div>
+                                        <div class="badge-img-wrapper">
+                                            <div class="single-badge-img" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="John Doe">
+                                                <img src="assets/images/images/badge-1.png">
+                                            </div>
+                                            <div class="single-badge-img" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="Jane Smith">
+                                                <img src="assets/images/images/badge-2.png">
+                                            </div>
+                                            <div class="single-badge-img" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="Mike Johnson">
+                                                <img src="assets/images/images/badge-3.png">
+                                            </div>
+                                            <div class="single-badge-img badge-more">
+                                                <p>+6</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Statistics Section End -->
+        </div>
+        <!-- Dashboard Page Content Start -->
+    </div>
+
+
+
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Data Tables -->
+    <script src="assets/js/data-table.js"></script>
+    <!-- Font Awesome -->
+    <script src="assets/js/all.min.js"></script>
+    <!-- Chart JS -->
+    <script src="assets/js/chart.js"></script>
+    <!-- Slick Slider -->
+    <script src="assets/js/slick.min.js"></script>
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.2/feather.min.js"></script>
+
+    <script src="https://cdn.datatables.net/buttons/3.2.0/js/dataTables.buttons.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.print.min.js"></script>
+
+
+
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        flatpickr("#calendar", {
+            inline: true,
+            defaultDate: new Date(),
+            events: ["2024-12-31", "2024-12-23", "2025-01-01"],
+            onDayCreate: function (dObj, dStr, fp, dayElem) {
+                const events = ["2024-12-31", "2024-12-23", "2025-01-01"];
+                const dateStr = dayElem.dateObj.toISOString().split("T")[0];
+
+                if (events.includes(dateStr)) {
+                    // Add a custom class for event days
+                    dayElem.classList.add("event-day");
+                }
+            },
+        });
+
+    </script>
+</body>
+
+</html>

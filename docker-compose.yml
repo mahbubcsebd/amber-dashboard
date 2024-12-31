@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dashboard-app
+    ports:
+      - '8080:80' # Map port 80 of the container to port 8080 of the host
+    volumes:
+      - ./app:/usr/share/nginx/html:ro # Mount app directory to the container
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    environment:
+      - NODE_ENV=production
