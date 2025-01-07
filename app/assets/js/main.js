@@ -53,38 +53,60 @@ $(document).ready(function () {
 
     // ---------------------------- DataTable Start ----------------------------
     $(document).ready(function () {
-        // Initialize DataTable
+        // Initialize DataTable without pagination buttons in DOM
         var table = $('#all-product-list-data-table').DataTable({
-            dom: 'rtip', // Enables the Buttons
-            buttons: [
-                {
-                    extend: 'copyHtml5',
-                    text: 'Copy',
-                    className: 'export-btn',
-                },
-                {
-                    extend: 'csvHtml5',
-                    text: 'CSV',
-                    className: 'export-btn',
-                },
-                {
-                    extend: 'excelHtml5',
-                    text: 'Excel',
-                    className: 'export-btn',
-                },
-                {
-                    extend: 'pdfHtml5',
-                    text: 'PDF',
-                    className: 'export-btn',
-                },
-                {
-                    extend: 'print',
-                    text: 'Print',
-                    className: 'export-btn',
-                },
-            ],
+            dom: 'rt', // Only show table, no pagination controls
+            pageLength: 10, // Number of rows per page
+            language: {
+                info: 'Showing entries _START_ to _END_ of _TOTAL_',
+                infoEmpty: 'Showing entries 0 to 0 of 0',
+                infoFiltered: '(filtered from _MAX_ total entries)',
+            },
         });
 
+        // Handle Previous button click
+        $('#table-prev').on('click', function () {
+            if (!$(this).prop('disabled')) {
+                table.page('previous').draw('page');
+            }
+        });
+
+        // Handle Next button click
+        $('#table-next').on('click', function () {
+            if (!$(this).prop('disabled')) {
+                table.page('next').draw('page');
+            }
+        });
+
+        // Function to update showing entries text and button states
+        function updatePaginationInfo() {
+            var pageInfo = table.page.info();
+
+            // Update showing entries text
+            var showingText =
+                'Showing entries ' +
+                (pageInfo.start + 1) +
+                ' to ' +
+                pageInfo.end +
+                ' of ' +
+                pageInfo.recordsTotal;
+            $('#showing-number').text(showingText);
+
+            // Update Previous button state
+            $('#table-prev').prop('disabled', !pageInfo.page);
+
+            // Update Next button state
+            $('#table-next').prop(
+                'disabled',
+                pageInfo.page >= pageInfo.pages - 1
+            );
+        }
+
+        // Update pagination info on page change
+        table.on('page.dt draw.dt', updatePaginationInfo);
+
+        // Initial update
+        updatePaginationInfo();
         // Attach buttons to your custom elements
         $('#btn-copy').on('click', function () {
             table.button('.buttons-copy').trigger();
@@ -469,16 +491,104 @@ $(document).ready(function () {
         chartTwo.update();
     });
 
-
-
     // Badge Tooltip
-      var tooltipTriggerList = [].slice.call(
-          document.querySelectorAll('[data-bs-toggle="tooltip"]')
-      );
-      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-          return new bootstrap.Tooltip(tooltipTriggerEl);
-      });
+    var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    );
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
 
+    tinymce.init({
+        selector: '#editor',
+        height: 600, // Adjust editor height
+        plugins: [
+            'advlist',
+            'autolink',
+            'lists',
+            'link',
+            'image',
+            'charmap',
+            'preview',
+            'anchor',
+            'searchreplace',
+            'visualblocks',
+            'code',
+            'fullscreen',
+            'insertdatetime',
+            'media',
+            'table',
+            'emoticons',
+            'wordcount',
+            'help',
+            'quickbars',
+            'directionality',
+            'codesample',
+            'pageembed',
+            'nonbreaking',
+            'save',
+            'template',
+            'visualchars',
+            'textcolor',
+        ],
+        toolbar: `undo redo | fontselect fontsizeselect |
+                      formatselect | bold italic underline strikethrough |
+                      forecolor backcolor | alignleft aligncenter alignright alignjustify |
+                      bullist numlist outdent indent | link image media table |
+                      codesample blockquote | emoticons charmap |
+                      preview fullscreen | help`,
+        menubar: 'file edit view insert format tools table help', // Full menu bar
+        content_style:
+            'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
 
+        // Font family options
+        font_family_formats: `
+                Arial=arial,helvetica,sans-serif;
+                Helvetica=helvetica;
+                Times New Roman=times new roman,times,serif;
+                Verdana=verdana,geneva,sans-serif;
+                Courier New=courier new,courier,monospace;
+                Comic Sans MS=comic sans ms,sans-serif;
+                Georgia=georgia,serif;
+                Tahoma=tahoma,arial,helvetica,sans-serif;
+            `,
 
+        // Font size options
+        fontsize_formats: '8pt 10pt 12pt 14pt 18pt 24pt 36pt',
+
+        // Quickbars and context menu
+        quickbars_selection_toolbar:
+            'bold italic | quicklink h1 h2 h3 h4 h5 h6 blockquote',
+        quickbars_insert_toolbar: 'quickimage quicktable',
+        contextmenu: 'link image inserttable | cell row column deletetable', // Context menu
+
+        // Enable image upload handling
+        images_upload_handler: function (blobInfo, success, failure) {
+            const formData = new FormData();
+            formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+            fetch('/api/upload', {
+                method: 'POST',
+                body: formData,
+            })
+                .then((response) => response.json())
+                .then((result) => success(result.location)) // Use the returned URL
+                .catch((error) =>
+                    failure('Image upload failed: ' + error.message)
+                );
+        },
+    });
+
+    // Initialize Select2
+    $('#tag-input').select2({
+        tags: true, // Enable tagging
+        tokenSeparators: [',', ' '], // Use comma or space to separate tags
+        placeholder: 'Type and press Enter to add a tag',
+        allowClear: true,
+    });
+
+    // Listen for new tag creation
+    $('#tag-input').on('select2:select', function (e) {
+        console.log('Selected tag:', e.params.data.text); // Optional: log the new tag
+    });
 });

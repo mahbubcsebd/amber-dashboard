@@ -291,6 +291,27 @@ li {
     width: 100%;
 }
 
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #c5c4c4;
+}
+
+/* Handle on hover */
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #c5c4c4;
+}
+
 /*=========================================================================================
     Global CSS End
  ==========================================================================================*/
@@ -1232,4 +1253,152 @@ table.dataTable tbody tr:hover {
 
 /*=========================================================================================
     Home Page CSS End
+ ==========================================================================================*/
+
+.dashboard-page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    border: 1px solid #eaecf0;
+    border-top: 0;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+.table-footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.showing-entries {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.table-prev-btn,
+.table-next-btn {
+    border: 1px solid #eaecf0;
+    border-radius: 8px;
+    transition: all 0.2s;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 14px;
+    color: #05011c;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    display: flex;
+    padding: 8px 14px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.table-prev-btn:hover,
+.table-next-btn:hover {
+    background-color: #f9fafb;
+}
+
+.table-prev-btn:disabled,
+.table-next-btn:disabled {
+    background-color: #f3f4f6;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.showing-number {
+    color: var(--Text-Color-Paragraph-Dark, #666e80);
+    font-family: 'Plus Jakarta Sans';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+}
+
+/* Hide default DataTables info */
+.dataTables_info {
+    display: inline-block;
+}
+
+/*=========================================================================================
+    Add Product Page CSS Start
+ ==========================================================================================*/
+.btn-outline {
+    color: var(--Text-Color-Title-Black, #05011c);
+    font-family: 'Plus Jakarta Sans';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 14px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px !important;
+    border-radius: 8px;
+    border: 1px solid var(--Stroke-Color-Light, #eaecf0);
+    background: var(--Background-Color-White, #fff);
+}
+
+label {
+    color: var(--Text-Color-Title-Black, #05011c);
+
+    /* Body Text/Medium/SemiBold */
+    font-family: 'Plus Jakarta Sans';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%; /* 22.4px */
+    width: 280px;
+}
+
+label span {
+    color: #e42f23;
+    font-size: 14px;
+}
+
+.form-group {
+    display: flex;
+    align-items: start;
+    gap: 32px;
+}
+
+.form-control,
+.form-select {
+    color: var(--Text-Color-Paragraph-Dark, #666e80);
+    text-overflow: ellipsis;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 25.6px */
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #eaecf0;
+}
+
+.dashboard-page-content-box {
+    padding: 24px;
+    border: 1px solid #eaecf0;
+}
+
+.add-product-form {
+    display: grid;
+    gap: 20px;
+}
+
+.question-icon {
+    color: #666e80;
+}
+
+.product-add-checkbox-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+/*=========================================================================================
+    Add Product Page CSS End
  ==========================================================================================*/

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Amber | Dashboard</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <!-- Remix Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" />
+    <!-- Slick Slider -->
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+    <!-- Data Tables -->
+    <link rel="stylesheet" href="assets/css/data-table.css">
+    <!-- Select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+    <div id="header" class="header section">
+        <div class="header-area">
+            <div class="">
+                <div class="header-content-wrapper">
+                    <div class="header-logo-wrapper">
+                        <a id="website-logo" href="index.html" class="website-logo">
+                            <img src="assets/images/icons/logo.svg" alt="logo">
+                        </a>
+                        <div class="slide-toggle-box">
+                            <button id="sidebar-toggle-btn" class="sidebar-toggle-btn d-none d-md-flex"><i
+                                    class="fa-solid fa-angles-left"></i></button>
+                            <button id="sidebar-show-btn" class="sidebar-toggle-btn d-md-none"><i
+                                    class="ri-menu-3-fill"></i></i></button>
+                        </div>
+                    </div>
+                    <div class="header-menu">
+                        <div class="header-menu-item">
+                            <h3 class="dashboard-header-title">Dashboard</h3>
+                        </div>
+                        <div class="header-search-box">
+                            <input id="header-search" class="header-search form-control" type="text"
+                                placeholder="Search">
+                            <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <button class="search-modal-btn">⌘K</button>
+                        </div>
+                        <div class="header-menu-list">
+                            <a href="#" class="upgrade-btn"><span><img src="assets/images/icons/upgrade.svg"
+                                        alt="upgrade"></span>Upgrade</a>
+                            <div class="dropdown header-dropdown header-setting-dropdown">
+                                <button class="header-btn btn-setting" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i data-feather="settings"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown header-dropdown header-notification-dropdown">
+                                <button class="header-btn btn-notification" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i data-feather="bell"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown header-dropdown profile-dropdown">
+                                <button class="header-profile" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <span><img src="assets/images/images/avatar.png" alt="avatar"></span> Admin <span><i
+                                            class="ri-arrow-down-s-line"></i></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-page">
+        <!-- Dashboard Sidebar Start -->
+        <div class="dashboard-sidebar">
+            <ul class="sidebar-menu-list">
+                <li class="sidebar-menu-item active">
+                    <a href="index.html" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/dashboard.svg" alt="dashboard"></span>
+                            Dashboard
+                        </span>
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="products-btn" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/products.svg" alt="products"></span>
+                            Products
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="products-link-list" class="sidebar-link-list">
+                        <li><a class="sidebar-link active" href="#">All Product</a></li>
+                        <li><a class="sidebar-link" href="#">Add Product</a></li>
+                        <li><a class="sidebar-link" href="#">All Product Types</a></li>
+                        <li><a class="sidebar-link" href="#">Add Product Types</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="engagements-btn" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/engagements.svg"
+                                    alt="engagements"></span>
+                            Engagements
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="engagements-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="findings-btn" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/findings.svg" alt="findings"></span>
+                            Findings
+                        </span>
+
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="findings-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="components-btn" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/components.svg"
+                                    alt="components"></span>
+                            Components
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="components-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="endpoints-btn" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/endpoints.svg" alt="endpoints"></span>
+                            Endpoints
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="endpoints-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="reports-btn" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/reports.svg" alt="reports"></span>
+                            Reports
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="reports-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="metrics-btn" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/metrics.svg" alt="metrics"></span>
+                            Metrics
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="metrics-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="user-btn" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/products.svg" alt="user"></span>
+                            User
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="user-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="calendar-btn" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/calendar.svg" alt="calendar"></span>
+                            Calendar
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="calendar-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="questionaries" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap">
+                            <span><img class="menu-icon" src="assets/images/icons/questionaures.svg"
+                                    alt="questionaries"></span>
+                            Questionaries
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="questionaries-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+                <li class="sidebar-menu-item">
+                    <button id="configaration" class="sidebar-menu-toggle-btn">
+                        <span class="side-btn-wrap"><span><img class="menu-icon"
+                                    src="assets/images/icons/configuration.svg" alt="configaration"></span>
+                            Configaration
+                        </span>
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </button>
+                    <ul id="configaration-link-list" class="sidebar-link-list">
+                        <a class="sidebar-link active" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                        <a class="sidebar-link" href="#">Dashboard</a>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- Dashboard Sidebar End -->
+
+
+
+        <!-- Dashboard Page Content Start -->
+        <div class="dashboard-page-content">
+            <div class="dashboard-top-box">
+                <div class="dashboard-page-header">
+                    <div class="dashboard-page-header-left">
+                        <div class="page-title-box">
+                            <h3 class="dashboard-page-title">Add New Product</h3>
+                        </div>
+                        <p class="page-sub-header">Add all the details of the products here.</p>
+                    </div>
+                    <div class="dashboard-page-header-right">
+                        <button type="button" class="btn-outline"><span><i
+                                    class="ri-close-circle-line"></i></span>Close</button>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-page-content-box">
+                <form id="add-product-form" class="add-product-form">
+                    <div class="form-group">
+                        <label for="product-add-name">Product Name <span>*</span></label>
+                        <input type="text" class="form-control" id="product-add-name" placeholder="Oliva">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-add-name">Description <span>*</span></label>
+                        <input type="text" class="form-control" id="product-add-name" placeholder="Oliva">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-add-name">Tags <span class="question-icon" data-toggle="tooltip"
+                                data-placement="top" title="Tooltip on top"><i
+                                    class="ri-question-line"></i></span></label>
+                        <input type="text" class="form-control" id="product-add-name" placeholder="Oliva">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-add-name">Product Manager</label>
+                        <select class="form-select">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-add-name">Technical Contact</label>
+                        <select class="form-select">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-add-name">Team Manager</label>
+                        <select class="form-select">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-add-name">Product Type</label>
+                        <select class="form-select">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-add-name">SLA Configuration</label>
+                        <select class="form-select">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-add-name">Regulations</label>
+                        <select class="form-select">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-add-name">Business Criticality</label>
+                        <select class="form-select">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-add-name">Platform</label>
+                        <select class="form-select">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-add-name">Lifecycle</label>
+                        <select class="form-select">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-add-name">Origin</label>
+                        <select class="form-select">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-add-name">User Records <span class="question-icon" data-toggle="tooltip"
+                                data-placement="top" title="Tooltip on top"><i
+                                    class="ri-question-line"></i></span></label>
+                        <input type="text" class="form-control" id="product-add-name" placeholder="User records">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-add-name">Revenue <span class="question-icon" data-toggle="tooltip"
+                                data-placement="top" title="Tooltip on top"><i
+                                    class="ri-question-line"></i></span></label>
+                        <input type="text" class="form-control" id="product-add-name" placeholder="Revenue">
+                    </div>
+
+                    <div class="product-add-checkbox-wrapper">
+                        <div class="d-grid gap-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    External Audience
+                                    <span class="question-icon" data-toggle="tooltip" data-placement="top"
+                                        title="Tooltip on top"><i class="ri-question-line"></i></span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    External Audience
+                                    <span class="question-icon" data-toggle="tooltip" data-placement="top"
+                                        title="Tooltip on top"><i class="ri-question-line"></i></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    External Audience
+                                    <span class="question-icon" data-toggle="tooltip" data-placement="top"
+                                        title="Tooltip on top"><i class="ri-question-line"></i></span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    External Audience
+                                    <span class="question-icon" data-toggle="tooltip" data-placement="top"
+                                        title="Tooltip on top"><i class="ri-question-line"></i></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    External Audience
+                                    <span class="question-icon" data-toggle="tooltip" data-placement="top"
+                                        title="Tooltip on top"><i class="ri-question-line"></i></span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    External Audience
+                                    <span class="question-icon" data-toggle="tooltip" data-placement="top"
+                                        title="Tooltip on top"><i class="ri-question-line"></i></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="dashboard-page-footer">
+                <div class="d-flex justify-content-end align-content-center gap-4">
+                    <button type="button" class="btn-outline"><span><i
+                                class="ri-close-circle-line"></i></span>Close</button>
+                    <button type="button" class="btn-orange"><span><i
+                                class="ri-close-circle-line"></i></span>Close</button>
+                </div>
+            </div>
+        </div>
+        <!-- Dashboard Page Content Start -->
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Data Tables -->
+    <script src="assets/js/data-table.js"></script>
+    <!-- Font Awesome -->
+    <script src="assets/js/all.min.js"></script>
+    <!-- Chart JS -->
+    <script src="assets/js/chart.js"></script>
+    <!-- Slick Slider -->
+    <script src="assets/js/slick.min.js"></script>
+    <!-- Select2 -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.2/feather.min.js"></script>
+
+    <script src="https://cdn.datatables.net/buttons/3.2.0/js/dataTables.buttons.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.print.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
