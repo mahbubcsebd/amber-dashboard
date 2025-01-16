@@ -525,8 +525,37 @@ tr {
 }
 
 .dashboard-page-header-right {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 12px;
+    justify-content: end !important;
+    align-items: end;
+    text-align: right;
+}
+
+.checked {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.checked-success {
+    background: #e5fff3;
+    color: #00b25d;
+}
+
+.checked-warning {
+    background: #fef0f0;
+    color: #ff5959;
+}
+
+.ambert-form {
+    width: 100%;
 }
 
 /* Filter */
@@ -603,6 +632,15 @@ tr {
     margin-bottom: 4px;
 }
 
+.row-sub-title {
+    color: #05011c;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+}
+
 .grade-success {
     width: 25px;
     height: 25px;
@@ -613,8 +651,6 @@ tr {
     align-items: center;
     color: var(--Accent-Colors-Success, #009946);
     text-align: center;
-
-    /* Body Text/Small/SemiBold */
     font-family: 'Plus Jakarta Sans';
     font-size: 12px;
     font-style: normal;
@@ -622,20 +658,63 @@ tr {
     line-height: 160%; /* 19.2px */
 }
 
-.tag.tag--none {
-    display: inline-block;
-    padding: 2px 8px;
-    align-items: center;
-    border-radius: 16px;
-    background: #f7f7f7;
-    mix-blend-mode: multiply;
-    color: #666e80;
+.engagement-sub {
+    color: var(--Text-Color-Paragraph-Dark, #666e80);
     text-align: center;
     font-family: 'Plus Jakarta Sans';
     font-size: 12px;
     font-style: normal;
     font-weight: 600;
     line-height: 160%;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 16px;
+    background: var(--Gray-100, #f2f4f7);
+}
+
+.text-warning {
+    color: #e42f23 !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 19.2px */
+}
+
+.tag {
+    display: inline-block;
+    padding: 2px 8px;
+    align-items: center;
+    border-radius: 16px;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+}
+
+.tag--none {
+    color: #666e80;
+    background: #f7f7f7;
+}
+
+.tag--completed {
+    color: #00b25d;
+    background: #e5fff3;
+}
+
+.tag--blocked {
+    color: #ff5959;
+    background: #fef0f0;
+}
+
+.tag--progress {
+    color: #614dff;
+    background: #f3f0fe;
+}
+
+.tag--migrated {
+    color: #f8910b;
+    background: #fff5eb;
 }
 
 .data-points-wraaper {
@@ -745,6 +824,11 @@ table.dataTable tbody tr:hover {
     border-radius: 6px;
     border: 1px solid var(--Stroke-Color-Light, #eaecf0);
     background: var(--Base-White, #fff);
+}
+
+.checkbox-sm {
+    width: 16px !important;
+    height: 16px !important;
 }
 
 /* Checked state styles */
@@ -1384,7 +1468,7 @@ label span {
     border: 1px solid #eaecf0;
 }
 
-.add-product-form {
+.form-content-wrapper {
     display: grid;
     gap: 20px;
 }
@@ -1399,6 +1483,312 @@ label span {
     gap: 16px;
 }
 
+.text-left {
+    color: var(--Text-Color-Paragraph-Dark, #666e80);
+    font-family: 'Plus Jakarta Sans';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    display: inline-block;
+    margin-top: 4px;
+}
 /*=========================================================================================
     Add Product Page CSS End
  ==========================================================================================*/
+
+/*=========================================================================================
+    Auth Page CSS End
+ ==========================================================================================*/
+.auth-page {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.auth-bg {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    z-index: 111;
+}
+
+.auth-box {
+    position: relative;
+    z-index: 999;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.auth-content {
+    background: #fff;
+    padding: 24px;
+    width: 480px;
+    border-radius: 20px;
+    margin: 0 auto;
+    max-height: max-content;
+}
+
+.auth-logo-box {
+    width: 134px;
+    margin-bottom: 60px;
+}
+
+.auth-logo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.auth-title-box {
+    margin-bottom: 32px;
+}
+
+.auth-title {
+    color: var(--Text-Color-Title-Black, #05011c);
+    font-family: 'Plus Jakarta Sans';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 41.6px */
+    margin-bottom: 12px;
+}
+
+.auth-sub {
+    color: var(--Text-Color-Paragraph-Dark, #666e80);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 25.6px */
+}
+
+.auth-form-input-wrapper {
+    display: grid;
+    gap: 20px;
+}
+
+.auth-form-input-wrapper label {
+    margin-bottom: 6px;
+}
+
+.auth-google-btn {
+    color: var(--Text-Color-Title-Black, #05011c);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 16px */
+    border-radius: 12px;
+    border: 1px solid var(--Stroke-Color-Light, #eaecf0);
+    background: var(--Background-Color-White, #fff);
+    display: flex;
+    width: 100%;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    gap: 8px;
+}
+
+.auth-switch-page {
+    color: var(--Text-Color-Paragraph-Dark, #666e80);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 22.4px */
+    text-align: center;
+    margin-top: 32px;
+}
+
+.auth-switch-page a {
+    color: #f8910b;
+    text-decoration: underline;
+}
+
+.auth-btn {
+    color: var(--Text-Color-Title-White, #fff);
+    font-family: 'Plus Jakarta Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 16px */
+    display: flex;
+    height: 48px;
+    padding: 10px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 12px;
+    background: var(--Brand-Color-Primary, #f8910b);
+}
+
+.auth-footer {
+    margin-top: 24px;
+}
+
+.auth-img-box {
+    width: 100%;
+}
+
+.auth-img {
+    width: 100%;
+    height: 100%;
+}
+
+.text-btn {
+    color: var(--Text-Color-Title-Black, #05011c);
+    font-family: 'Plus Jakarta Sans';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.text-btn span {
+    text-decoration: underline;
+}
+
+.check-validity-wrapper {
+    display: grid;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.single-validity-check {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.single-validity-check p {
+    color: var(--Text-Color-Paragraph-Dark, #666e80);
+    font-family: 'Plus Jakarta Sans';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+}
+
+.check-validity {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #eaecf0;
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.validate {
+    background: green;
+}
+
+/*=========================================================================================
+    Auth Page CSS End
+ ==========================================================================================*/
+
+/*=========================================================================================
+    Email Template Page CSS Start
+ ==========================================================================================*/
+.email-template-page {
+    max-width: 640px;
+    padding: 56px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.et-text {
+    color: var(--Text-Color-Paragraph-Dark, #666e80);
+    font-family: 'Plus Jakarta Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 25.6px */
+}
+
+.et-text span {
+    color: #05011c;
+    font-weight: 600;
+}
+
+.et-logo {
+    max-width: 134px;
+}
+
+.et-logo-box {
+    margin-bottom: 48px;
+}
+
+.et-text-sm {
+    color: var(--Text-Color-Paragraph-Dark, #666e80);
+    font-family: 'Plus Jakarta Sans';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 22.4px */
+}
+
+.et-text-sm a {
+    color: #05011c;
+    text-decoration: underline;
+}
+
+.et-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.et-footer-logo {
+    max-width: 100px;
+}
+
+.et-content {
+    margin: 56px 0;
+}
+
+.et-social-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.et-social-list li a {
+    font-size: 18px;
+    color: #666e80;
+}
+/*=========================================================================================
+    Email Template Page CSS End
+ ==========================================================================================*/
+
+.text-gray-sm {
+    color: var(--Text-Color-Paragraph-Dark, #666e80);
+    font-family: 'Plus Jakarta Sans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+}
+
+.content-without-footer {
+    border: 1px solid #eaecf0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+}
+
+.content-not-found {
+    border: 1px solid #eaecf0;
+    overflow: hidden;
+    min-height: 300px;
+}

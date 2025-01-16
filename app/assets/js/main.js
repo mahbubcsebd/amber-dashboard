@@ -499,8 +499,90 @@ $(document).ready(function () {
         return new bootstrap.Tooltip(tooltipTriggerEl);
     });
 
+    function editor(selector) {
+        tinymce.init({
+            selector: selector,
+            height: 600, // Adjust editor height
+            plugins: [
+                'advlist',
+                'autolink',
+                'lists',
+                'link',
+                'image',
+                'charmap',
+                'preview',
+                'anchor',
+                'searchreplace',
+                'visualblocks',
+                'code',
+                'fullscreen',
+                'insertdatetime',
+                'media',
+                'table',
+                'emoticons',
+                'wordcount',
+                'help',
+                'quickbars',
+                'directionality',
+                'codesample',
+                'pageembed',
+                'nonbreaking',
+                'save',
+                'template',
+                'visualchars',
+                'textcolor',
+            ],
+            toolbar: `undo redo | fontselect fontsizeselect |
+                      formatselect | bold italic underline strikethrough |
+                      forecolor backcolor | alignleft aligncenter alignright alignjustify |
+                      bullist numlist outdent indent | link image media table |
+                      codesample blockquote | emoticons charmap |
+                      preview fullscreen | help`,
+            menubar: 'file edit view insert format tools table help', // Full menu bar
+            content_style:
+                'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
+
+            // Font family options
+            font_family_formats: `
+                Arial=arial,helvetica,sans-serif;
+                Helvetica=helvetica;
+                Times New Roman=times new roman,times,serif;
+                Verdana=verdana,geneva,sans-serif;
+                Courier New=courier new,courier,monospace;
+                Comic Sans MS=comic sans ms,sans-serif;
+                Georgia=georgia,serif;
+                Tahoma=tahoma,arial,helvetica,sans-serif;
+            `,
+
+            // Font size options
+            fontsize_formats: '8pt 10pt 12pt 14pt 18pt 24pt 36pt',
+
+            // Quickbars and context menu
+            quickbars_selection_toolbar:
+                'bold italic | quicklink h1 h2 h3 h4 h5 h6 blockquote',
+            quickbars_insert_toolbar: 'quickimage quicktable',
+            contextmenu: 'link image inserttable | cell row column deletetable', // Context menu
+
+            // Enable image upload handling
+            images_upload_handler: function (blobInfo, success, failure) {
+                const formData = new FormData();
+                formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+                fetch('/api/upload', {
+                    method: 'POST',
+                    body: formData,
+                })
+                    .then((response) => response.json())
+                    .then((result) => success(result.location)) // Use the returned URL
+                    .catch((error) =>
+                        failure('Image upload failed: ' + error.message)
+                    );
+            },
+        });
+    }
+
     tinymce.init({
-        selector: '#editor',
+        selector: '#product-description-editor',
         height: 600, // Adjust editor height
         plugins: [
             'advlist',
@@ -578,6 +660,9 @@ $(document).ready(function () {
                 );
         },
     });
+
+    editor('#editor');
+    editor('#product-description-editor');
 
     // Initialize Select2
     $('#tag-input').select2({

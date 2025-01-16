@@ -281,14 +281,13 @@
                 <div class="dashboard-page-header">
                     <div class="dashboard-page-header-left">
                         <div class="page-title-box">
-                            <h3 class="dashboard-page-title">Product Type List</h3>
-                            <p class="archary-text"><span><img src="assets/icons/types.svg" alt="archer"></span>19
-                                Product Type</p>
+                            <h3 class="dashboard-page-title">Active Engagements List</h3>
+                            <p class="archary-text"><span><img src="assets/icons/archer.svg" alt="archer"></span>27
+                                Engagements Show</p>
                         </div>
-                        <p class="page-sub-header">All product type details are showing here.</p>
+                        <p class="page-sub-header">All engagements details are showing here.</p>
                     </div>
                     <div class="dashboard-page-header-right">
-                        <a href="#" class="btn-orange"><span><i class="ri-add-line"></i></span>Add Product Type</a>
                         <div class="table-export-box">
                             <button id="btn-copy" class="export-btn">
                                 <span><img src="assets/icons/copy.svg" alt="copy"></span>
@@ -336,11 +335,11 @@
                 <thead>
                     <tr>
                         <th><input type="checkbox" class="custom-checkbox" id="select-all"></th>
+                        <th>Engagement</th>
+                        <th>Period</th>
+                        <th>Status</th>
+                        <th>Product</th>
                         <th>Product Type</th>
-                        <th>Product count</th>
-                        <th>Active (Verified) Findings</th>
-                        <th>Critical Product</th>
-                        <th>Key Product</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -348,26 +347,30 @@
                     <tr>
                         <td><input type="checkbox" class="row-checkbox custom-checkbox"></td>
                         <td>
-                            <h4 class="row-title">Billing</h4>
-                        </td>
-                        <td>
-                            <h4 class="row-title">2</h4>
-                        </td>
-                        <td>
-                            <div class="finding-verify">
-                                <p class="finding-verify-actve">204</p>
-                                <p class="finding-verify-deactive">(204)</p>
+                            <div class="">
+                                <h4 class="row-title">2024-12-19</h4>
+                                <p class="engagement-sub">pci</p>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-success">
-                                <i class="ri-check-line"></i>
+                            <div class="engagement-wrapper">
+                                <div>
+                                    <img src="assets/icons/calendar-2.svg" alt="calendar">
+                                </div>
+                                <div class="engagement-text">
+                                    <p class="row-sub-title">Nov. 1, 2018 - Nov. 8, 2018</p>
+                                    <p class="text-warning">(6 years 1 month 11 days overdue)</p>
+                                </div>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-success">
-                                <i class="ri-check-line"></i>
-                            </div>
+                            <div class="tag tag--none">Not Started</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Apple Accounting Software</p>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Billing</p>
                         </td>
                         <td>
                             <div class="dropdown">
@@ -386,26 +389,31 @@
                     <tr>
                         <td><input type="checkbox" class="row-checkbox custom-checkbox"></td>
                         <td>
-                            <h4 class="row-title">Commerce</h4>
-                        </td>
-                        <td>
-                            <h4 class="row-title">5</h4>
-                        </td>
-                        <td>
-                            <div class="finding-verify">
-                                <p class="finding-verify-actve">5</p>
-                                <p class="finding-verify-deactive">(0)</p>
+                            <div class="">
+                                <h4 class="row-title">Quarterly PCI Scan</h4>
+                                <p class="engagement-sub">pci</p>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-warning">
-                                <i class="ri-check-line"></i>
+                            <div class="engagement-wrapper">
+                                <div>
+                                    <img src="assets/icons/calendar-2.svg" alt="calendar">
+                                </div>
+                                <div class="engagement-text">
+                                    <p class="row-sub-title">Nov. 1, 2018 - Nov. 8, 2018</p>
+                                    <p class="text-warning">(6 years 1 month 11 days overdue)</p>
+                                </div>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-warning">
-                                <i class="ri-check-line"></i>
-                            </div>
+                            <div class="tag tag--completed">Completed</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Bodgelt</p>
+                            <div class="tag tag--none">Retire</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Billing</p>
                         </td>
                         <td>
                             <div class="dropdown">
@@ -424,26 +432,31 @@
                     <tr>
                         <td><input type="checkbox" class="row-checkbox custom-checkbox"></td>
                         <td>
-                            <h4 class="row-title">Employee</h4>
-                        </td>
-                        <td>
-                            <h4 class="row-title">7</h4>
-                        </td>
-                        <td>
-                            <div class="finding-verify">
-                                <p class="finding-verify-actve">525</p>
-                                <p class="finding-verify-deactive">(325)</p>
+                            <div class="">
+                                <h4 class="row-title">Manual PenTest</h4>
+                                <p class="engagement-sub">pci</p>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-warning">
-                                <i class="ri-check-line"></i>
+                            <div class="engagement-wrapper">
+                                <div>
+                                    <img src="assets/icons/calendar-2.svg" alt="calendar">
+                                </div>
+                                <div class="engagement-text">
+                                    <p class="row-sub-title">Oct. 12, 2018 - Oct. 15, 2018</p>
+                                    <p class="text-warning">(6 years 2 months 4 days overdue)</p>
+                                </div>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-warning">
-                                <i class="ri-check-line"></i>
-                            </div>
+                            <div class="tag tag--blocked">Blocked</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Bodgelt</p>
+                            <div class="tag tag--none">Retire</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Commerce</p>
                         </td>
                         <td>
                             <div class="dropdown">
@@ -462,26 +475,30 @@
                     <tr>
                         <td><input type="checkbox" class="row-checkbox custom-checkbox"></td>
                         <td>
-                            <h4 class="row-title">Mist App</h4>
-                        </td>
-                        <td>
-                            <h4 class="row-title">9</h4>
-                        </td>
-                        <td>
-                            <div class="finding-verify">
-                                <p class="finding-verify-actve">558</p>
-                                <p class="finding-verify-deactive">(474)</p>
+                            <div class="">
+                                <h4 class="row-title">Initial Assessment</h4>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-success">
-                                <i class="ri-check-line"></i>
+                            <div class="engagement-wrapper">
+                                <div>
+                                    <img src="assets/icons/calendar-2.svg" alt="calendar">
+                                </div>
+                                <div class="engagement-text">
+                                    <p class="row-sub-title">Oct. 12, 2018 - Oct. 15, 2018</p>
+                                    <p class="text-warning">(6 years 2 months 4 days overdue)</p>
+                                </div>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-success">
-                                <i class="ri-check-line"></i>
-                            </div>
+                            <div class="tag tag--progress">In Progress</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Bodgelt</p>
+                            <div class="tag tag--none">Retire</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Commerce</p>
                         </td>
                         <td>
                             <div class="dropdown">
@@ -500,26 +517,30 @@
                     <tr>
                         <td><input type="checkbox" class="row-checkbox custom-checkbox"></td>
                         <td>
-                            <h4 class="row-title">Secure App</h4>
-                        </td>
-                        <td>
-                            <h4 class="row-title">5</h4>
-                        </td>
-                        <td>
-                            <div class="finding-verify">
-                                <p class="finding-verify-actve">5</p>
-                                <p class="finding-verify-deactive">(0)</p>
+                            <div class="">
+                                <h4 class="row-title">2024-12-19</h4>
+                                <p class="engagement-sub">pci</p>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-warning">
-                                <i class="ri-check-line"></i>
+                            <div class="engagement-wrapper">
+                                <div>
+                                    <img src="assets/icons/calendar-2.svg" alt="calendar">
+                                </div>
+                                <div class="engagement-text">
+                                    <p class="row-sub-title">Nov. 1, 2018 - Nov. 8, 2018</p>
+                                    <p class="text-warning">(6 years 1 month 11 days overdue)</p>
+                                </div>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-warning">
-                                <i class="ri-check-line"></i>
-                            </div>
+                            <div class="tag tag--none">Not Started</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Apple Accounting Software</p>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Billing</p>
                         </td>
                         <td>
                             <div class="dropdown">
@@ -538,26 +559,31 @@
                     <tr>
                         <td><input type="checkbox" class="row-checkbox custom-checkbox"></td>
                         <td>
-                            <h4 class="row-title">Billing</h4>
-                        </td>
-                        <td>
-                            <h4 class="row-title">2</h4>
-                        </td>
-                        <td>
-                            <div class="finding-verify">
-                                <p class="finding-verify-actve">204</p>
-                                <p class="finding-verify-deactive">(204)</p>
+                            <div class="">
+                                <h4 class="row-title">Quarterly PCI Scan</h4>
+                                <p class="engagement-sub">pci</p>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-success">
-                                <i class="ri-check-line"></i>
+                            <div class="engagement-wrapper">
+                                <div>
+                                    <img src="assets/icons/calendar-2.svg" alt="calendar">
+                                </div>
+                                <div class="engagement-text">
+                                    <p class="row-sub-title">Nov. 1, 2018 - Nov. 8, 2018</p>
+                                    <p class="text-warning">(6 years 1 month 11 days overdue)</p>
+                                </div>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-success">
-                                <i class="ri-check-line"></i>
-                            </div>
+                            <div class="tag tag--completed">Completed</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Bodgelt</p>
+                            <div class="tag tag--none">Retire</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Billing</p>
                         </td>
                         <td>
                             <div class="dropdown">
@@ -576,26 +602,31 @@
                     <tr>
                         <td><input type="checkbox" class="row-checkbox custom-checkbox"></td>
                         <td>
-                            <h4 class="row-title">Commerce</h4>
-                        </td>
-                        <td>
-                            <h4 class="row-title">5</h4>
-                        </td>
-                        <td>
-                            <div class="finding-verify">
-                                <p class="finding-verify-actve">5</p>
-                                <p class="finding-verify-deactive">(0)</p>
+                            <div class="">
+                                <h4 class="row-title">Manual PenTest</h4>
+                                <p class="engagement-sub">pci</p>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-warning">
-                                <i class="ri-check-line"></i>
+                            <div class="engagement-wrapper">
+                                <div>
+                                    <img src="assets/icons/calendar-2.svg" alt="calendar">
+                                </div>
+                                <div class="engagement-text">
+                                    <p class="row-sub-title">Oct. 12, 2018 - Oct. 15, 2018</p>
+                                    <p class="text-warning">(6 years 2 months 4 days overdue)</p>
+                                </div>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-warning">
-                                <i class="ri-check-line"></i>
-                            </div>
+                            <div class="tag tag--blocked">Blocked</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Bodgelt</p>
+                            <div class="tag tag--none">Retire</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Commerce</p>
                         </td>
                         <td>
                             <div class="dropdown">
@@ -614,26 +645,30 @@
                     <tr>
                         <td><input type="checkbox" class="row-checkbox custom-checkbox"></td>
                         <td>
-                            <h4 class="row-title">Employee</h4>
-                        </td>
-                        <td>
-                            <h4 class="row-title">7</h4>
-                        </td>
-                        <td>
-                            <div class="finding-verify">
-                                <p class="finding-verify-actve">525</p>
-                                <p class="finding-verify-deactive">(325)</p>
+                            <div class="">
+                                <h4 class="row-title">Initial Assessment</h4>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-warning">
-                                <i class="ri-check-line"></i>
+                            <div class="engagement-wrapper">
+                                <div>
+                                    <img src="assets/icons/calendar-2.svg" alt="calendar">
+                                </div>
+                                <div class="engagement-text">
+                                    <p class="row-sub-title">Oct. 12, 2018 - Oct. 15, 2018</p>
+                                    <p class="text-warning">(6 years 2 months 4 days overdue)</p>
+                                </div>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-warning">
-                                <i class="ri-check-line"></i>
-                            </div>
+                            <div class="tag tag--progress">In Progress</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Bodgelt</p>
+                            <div class="tag tag--none">Retire</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Commerce</p>
                         </td>
                         <td>
                             <div class="dropdown">
@@ -652,26 +687,30 @@
                     <tr>
                         <td><input type="checkbox" class="row-checkbox custom-checkbox"></td>
                         <td>
-                            <h4 class="row-title">Mist App</h4>
-                        </td>
-                        <td>
-                            <h4 class="row-title">9</h4>
-                        </td>
-                        <td>
-                            <div class="finding-verify">
-                                <p class="finding-verify-actve">558</p>
-                                <p class="finding-verify-deactive">(474)</p>
+                            <div class="">
+                                <h4 class="row-title">2024-12-19</h4>
+                                <p class="engagement-sub">pci</p>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-success">
-                                <i class="ri-check-line"></i>
+                            <div class="engagement-wrapper">
+                                <div>
+                                    <img src="assets/icons/calendar-2.svg" alt="calendar">
+                                </div>
+                                <div class="engagement-text">
+                                    <p class="row-sub-title">Nov. 1, 2018 - Nov. 8, 2018</p>
+                                    <p class="text-warning">(6 years 1 month 11 days overdue)</p>
+                                </div>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-success">
-                                <i class="ri-check-line"></i>
-                            </div>
+                            <div class="tag tag--none">Not Started</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Apple Accounting Software</p>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Billing</p>
                         </td>
                         <td>
                             <div class="dropdown">
@@ -690,26 +729,286 @@
                     <tr>
                         <td><input type="checkbox" class="row-checkbox custom-checkbox"></td>
                         <td>
-                            <h4 class="row-title">Secure App</h4>
-                        </td>
-                        <td>
-                            <h4 class="row-title">5</h4>
-                        </td>
-                        <td>
-                            <div class="finding-verify">
-                                <p class="finding-verify-actve">5</p>
-                                <p class="finding-verify-deactive">(0)</p>
+                            <div class="">
+                                <h4 class="row-title">Quarterly PCI Scan</h4>
+                                <p class="engagement-sub">pci</p>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-warning">
-                                <i class="ri-check-line"></i>
+                            <div class="engagement-wrapper">
+                                <div>
+                                    <img src="assets/icons/calendar-2.svg" alt="calendar">
+                                </div>
+                                <div class="engagement-text">
+                                    <p class="row-sub-title">Nov. 1, 2018 - Nov. 8, 2018</p>
+                                    <p class="text-warning">(6 years 1 month 11 days overdue)</p>
+                                </div>
                             </div>
                         </td>
                         <td>
-                            <div class="checked checked-warning">
-                                <i class="ri-check-line"></i>
+                            <div class="tag tag--completed">Completed</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Bodgelt</p>
+                            <div class="tag tag--none">Retire</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Billing</p>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="three-dot-menu" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <img src="assets/icons/dots-vertical.svg" alt="dots">
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
                             </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="row-checkbox custom-checkbox"></td>
+                        <td>
+                            <div class="">
+                                <h4 class="row-title">Manual PenTest</h4>
+                                <p class="engagement-sub">pci</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="engagement-wrapper">
+                                <div>
+                                    <img src="assets/icons/calendar-2.svg" alt="calendar">
+                                </div>
+                                <div class="engagement-text">
+                                    <p class="row-sub-title">Oct. 12, 2018 - Oct. 15, 2018</p>
+                                    <p class="text-warning">(6 years 2 months 4 days overdue)</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tag tag--blocked">Blocked</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Bodgelt</p>
+                            <div class="tag tag--none">Retire</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Commerce</p>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="three-dot-menu" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <img src="assets/icons/dots-vertical.svg" alt="dots">
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="row-checkbox custom-checkbox"></td>
+                        <td>
+                            <div class="">
+                                <h4 class="row-title">Initial Assessment</h4>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="engagement-wrapper">
+                                <div>
+                                    <img src="assets/icons/calendar-2.svg" alt="calendar">
+                                </div>
+                                <div class="engagement-text">
+                                    <p class="row-sub-title">Oct. 12, 2018 - Oct. 15, 2018</p>
+                                    <p class="text-warning">(6 years 2 months 4 days overdue)</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tag tag--progress">In Progress</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Bodgelt</p>
+                            <div class="tag tag--none">Retire</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Commerce</p>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="three-dot-menu" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <img src="assets/icons/dots-vertical.svg" alt="dots">
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="row-checkbox custom-checkbox"></td>
+                        <td>
+                            <div class="">
+                                <h4 class="row-title">2024-12-19</h4>
+                                <p class="engagement-sub">pci</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="engagement-wrapper">
+                                <div>
+                                    <img src="assets/icons/calendar-2.svg" alt="calendar">
+                                </div>
+                                <div class="engagement-text">
+                                    <p class="row-sub-title">Nov. 1, 2018 - Nov. 8, 2018</p>
+                                    <p class="text-warning">(6 years 1 month 11 days overdue)</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tag tag--none">Not Started</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Apple Accounting Software</p>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Billing</p>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="three-dot-menu" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <img src="assets/icons/dots-vertical.svg" alt="dots">
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="row-checkbox custom-checkbox"></td>
+                        <td>
+                            <div class="">
+                                <h4 class="row-title">Quarterly PCI Scan</h4>
+                                <p class="engagement-sub">pci</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="engagement-wrapper">
+                                <div>
+                                    <img src="assets/icons/calendar-2.svg" alt="calendar">
+                                </div>
+                                <div class="engagement-text">
+                                    <p class="row-sub-title">Nov. 1, 2018 - Nov. 8, 2018</p>
+                                    <p class="text-warning">(6 years 1 month 11 days overdue)</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tag tag--completed">Completed</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Bodgelt</p>
+                            <div class="tag tag--none">Retire</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Billing</p>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="three-dot-menu" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <img src="assets/icons/dots-vertical.svg" alt="dots">
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="row-checkbox custom-checkbox"></td>
+                        <td>
+                            <div class="">
+                                <h4 class="row-title">Manual PenTest</h4>
+                                <p class="engagement-sub">pci</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="engagement-wrapper">
+                                <div>
+                                    <img src="assets/icons/calendar-2.svg" alt="calendar">
+                                </div>
+                                <div class="engagement-text">
+                                    <p class="row-sub-title">Oct. 12, 2018 - Oct. 15, 2018</p>
+                                    <p class="text-warning">(6 years 2 months 4 days overdue)</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tag tag--blocked">Blocked</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Bodgelt</p>
+                            <div class="tag tag--none">Retire</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Commerce</p>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="three-dot-menu" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <img src="assets/icons/dots-vertical.svg" alt="dots">
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="row-checkbox custom-checkbox"></td>
+                        <td>
+                            <div class="">
+                                <h4 class="row-title">Initial Assessment</h4>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="engagement-wrapper">
+                                <div>
+                                    <img src="assets/icons/calendar-2.svg" alt="calendar">
+                                </div>
+                                <div class="engagement-text">
+                                    <p class="row-sub-title">Oct. 12, 2018 - Oct. 15, 2018</p>
+                                    <p class="text-warning">(6 years 2 months 4 days overdue)</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tag tag--progress">In Progress</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Bodgelt</p>
+                            <div class="tag tag--none">Retire</div>
+                        </td>
+                        <td>
+                            <p class="row-sub-title">Commerce</p>
                         </td>
                         <td>
                             <div class="dropdown">
